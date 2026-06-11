@@ -1,0 +1,17 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+
+.venv/
+venv/
+
+data/
+checkpoints/
+logs/
+results/
+wandb/
+
+*.csv
+*.h5
+*.npz
+*.pkl

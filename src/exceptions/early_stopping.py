@@ -1,0 +1,2 @@
+class EarlyStoppingException(Exception):
+    pass

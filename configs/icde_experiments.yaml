@@ -1,0 +1,39 @@
+taus: [0.10, 0.20, 0.30, 0.40, 1.00]
+
+datasets:
+  compas:
+    run: compas_fairlab
+    num_classes: 2
+    public_name: Compas
+  meps:
+    run: mep_fairlab
+    num_classes: 2
+    public_name: MEPS
+  income:
+    run: income_fairlab
+    num_classes: 2
+    public_name: Income
+  income_3:
+    run: income_3_fairlab
+    num_classes: 3
+    public_name: Income_3
+  education:
+    run: education_fairlab
+    num_classes: 3
+    public_name: Education
+
+explainers:
+  - fastshap
+  - intgrad
+  - lime
+  - kernelshap
+
+xai_metrics:
+  - sufficiency
+  - consistency
+  - stability
+
+gap_protocol:
+  reference: within_group
+  local_classes: black_box_predictions
+  class_aggregation: mean_of_classwise_max_group_gaps
