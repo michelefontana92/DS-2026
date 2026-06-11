@@ -277,4 +277,8 @@ Derived from Folktables, it contains about 2.45 million records and 25 features 
 
 ## Black-box Predictive Model
 
-Across all datasets, the predictive model is implemented as a feedforward neural network with two hidden layers containing $300$ and $100$ neurons, respectively, and ReLU activation functions. A Dropout layer with rate $0.2$ is applied after the last hidden layer for regularization, while the output layer uses the Softmax function.
+Across all datasets, the predictive model is implemented as a feedforward neural network with two hidden layers containing $300$ and $100$ neurons, respectively, and ReLU activation functions. A Dropout layer with rate $0.2$ is applied after the last hidden layer for regularization, while the output layer uses the Softmax function. The neural network is trained for a maximum of 30 iterations at the orchestrator level and up to 10 epochs per learner. Early stopping is employed with a patience of 5 epochs at
+both levels, based on the scoring functions.
+At the learner level, optimization is performed using the Adam optimizer with
+a learning rate of 1e−4, weight decay of 1e−4, and batch size 128. The training
+loss is the Cross-Entropy loss, and the fairness threshold is set to τ = 0.1
