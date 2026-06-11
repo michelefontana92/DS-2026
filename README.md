@@ -274,3 +274,7 @@ Derived from Folktables, it contains about 2.45 million records and 25 features 
 <p align="center">
   <img src="img/Education_test_exploratory_summary_grid.png" width="900">
 </p>
+
+## Black-box Predictive Model
+
+Across all datasets, the predictive model is implemented as a feedforward neural network with two hidden layers containing $300$ and $100$ neurons, respectively, and ReLU activation functions. A Dropout layer with rate $0.2$ is applied after the last hidden layer for regularization, while the output layer uses the Softmax function.
