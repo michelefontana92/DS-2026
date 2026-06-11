@@ -1,8 +1,9 @@
-#  On the Fairness of Feature Attribution Explanations
+# On the Fairness of Feature Attribution Explanations
 
 This repository contains the code needed to reproduce the core experiments for
-the paper: **On the
-Fairness of Feature Attribution Explanations.**
+the paper: **On the Fairness of Feature Attribution Explanations.** It includes
+FairLab black-box training, FastSHAP/LIME/Integrated Gradients/KernelSHAP
+explanations, and explanation-quality metrics with sensitive-group gaps.
 
 The public protocol uses a fixed sensitive-group-stratified **test subset**. The
 original FairLab data loader may still expect files named `*_val.csv`; in this
@@ -14,6 +15,12 @@ repository that split is treated and reported as the test split.
 .
 ├── configs/
 │   └── icde_experiments.yaml
+├── figs/
+│   ├── Compas_test_exploratory_summary_grid.png
+│   ├── MEPS_test_exploratory_summary_grid.png
+│   ├── Income_test_exploratory_summary_grid.png
+│   ├── Income_3_test_exploratory_summary_grid.png
+│   └── Education_test_exploratory_summary_grid.png
 ├── src/
 │   ├── main.py                         # FairLab training CLI
 │   ├── export_black_box_predictions.py # test logits/probabilities cache
@@ -225,7 +232,7 @@ Outputs are stored under:
 results/New_Experiments/xai_metrics/test_subset_n2000_min20_seed42/
 ```
 
-## Supported Datasets and Runs
+## Supported Runs
 
 ```text
 compas_fairlab    -> Compas, binary
@@ -235,5 +242,35 @@ income_3_fairlab  -> Income_3, multiclass
 education_fairlab -> Education, multiclass
 ```
 
-The sensitive attributes and intersectional attributes are read from the
-corresponding FairLab run definitions.
+## Data Description
+Here, we report a descriptive analysis of the datasets used in our experiments. For each dataset, we summarize: (A) the target class distribution; (B) the smallest and largest sensitive groups, highlighting group-size imbalance; (C) the class composition within these extreme groups; (D) the most label-informative features, measured through normalized mutual information with the target variable; (E) the cumulative concentration of label information across ranked features; and (F) the strongest pairwise feature associations, measured through normalized mutual information. Together, these diagnostics provide insights into class imbalance, sensitive-group heterogeneity, feature relevance, and feature dependence structures that may influence both predictive performance and explanation fairness.
+### Compas
+The dataset contains 6,172 criminal records from Broward County, Florida, with 34 features describing demographics, criminal history, and incarceration details. The goal is to predict whether a defendant will re-offend within two years.  
+<p align="center">
+  <img src="figs/Compas_test_exploratory_summary_grid.png" width="900">
+</p>
+
+### MEPS
+Derived from the 2015 Medical Expenditure Panel Survey, it includes about 30,000 records and 132 features after preprocessing. The task is to predict whether an individual’s annual medical expenditures exceed the third quartile.  
+<p align="center">
+  <img src="figs/MEPS_test_exploratory_summary_grid.png" width="900">
+</p>
+
+### Income
+Drawn from the Folktables suite, based on the 2014 U.S. Census, it contains approximately 2.45 million records and 20 features after preprocessing. The task is to predict whether an individual earns more than \$50,000 annually.  
+<p align="center">
+  <img src="figs/Income_test_exploratory_summary_grid.png" width="900">
+</p>
+
+### Income_3
+This dataset extends \income\ to multiclass classification, using the same 20 features and 2.45 million records but with three income brackets as labels: below \$30,000, between \$30,000 and \$50,000, and above \$50,000. 
+<p align="center">
+  <img src="figs/Income_3_test_exploratory_summary_grid.png" width="900">
+</p>
+
+### Education
+Derived from Folktables, it contains about 2.45 million records and 25 features after preprocessing. The task is multiclass classification: predicting education level with three classes (less than high school, high school, and college or above).
+
+<p align="center">
+  <img src="figs/Education_test_exploratory_summary_grid.png" width="900">
+</p>
