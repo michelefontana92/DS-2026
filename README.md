@@ -243,37 +243,26 @@ education_fairlab -> Education, multiclass
 ```
 
 ## Data Description
-Here, we report a descriptive analysis of the datasets used in our experiments. For each dataset, we summarize: (A) the target class distribution; (B) the smallest and largest sensitive groups, highlighting group-size imbalance; (C) the class composition within these extreme groups; (D) the most label-informative features, measured through normalized mutual information with the target variable; (E) the cumulative concentration of label information across ranked features; and (F) the strongest pairwise feature associations, measured through normalized mutual information. Together, these diagnostics provide insights into class imbalance, sensitive-group heterogeneity, feature relevance, and feature dependence structures that may influence both predictive performance and explanation fairness.
+Here, we report a descriptive analysis of the datasets used in our experiments.
 ### Compas
 The dataset contains 6,172 criminal records from Broward County, Florida, with 34 features describing demographics, criminal history, and incarceration details. The goal is to predict whether a defendant will re-offend within two years.  
-<p align="center">
-  <img src="img/Compas_test_exploratory_summary_grid.png" width="900">
-</p>
 
 ### MEPS
 Derived from the 2015 Medical Expenditure Panel Survey, it includes about 30,000 records and 132 features after preprocessing. The task is to predict whether an individual’s annual medical expenditures exceed the third quartile.  
-<p align="center">
-  <img src="img/MEPS_test_exploratory_summary_grid.png" width="900">
-</p>
+
 
 ### Income
 Drawn from the Folktables suite, based on the 2014 U.S. Census, it contains approximately 2.45 million records and 20 features after preprocessing. The task is to predict whether an individual earns more than \$50,000 annually.  
-<p align="center">
-  <img src="img/Income_test_exploratory_summary_grid.png" width="900">
-</p>
+
 
 ### Income_3
 This dataset extends \income\ to multiclass classification, using the same 20 features and 2.45 million records but with three income brackets as labels: below \$30,000, between \$30,000 and \$50,000, and above \$50,000. 
-<p align="center">
-  <img src="img/Income_3_test_exploratory_summary_grid.png" width="900">
-</p>
+
 
 ### Education
 Derived from Folktables, it contains about 2.45 million records and 25 features after preprocessing. The task is multiclass classification: predicting education level with three classes (less than high school, high school, and college or above).
 
-<p align="center">
-  <img src="img/Education_test_exploratory_summary_grid.png" width="900">
-</p>
+
 
 ## Black-box Predictive Model
 
