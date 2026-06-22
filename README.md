@@ -281,4 +281,4 @@ Across all datasets, the predictive model is implemented as a feedforward neural
 both levels, based on the scoring functions.
 At the learner level, optimization is performed using the Adam optimizer with
 a learning rate of 1e−4, weight decay of 1e−4, and batch size 128. The training
-loss is the Cross-Entropy loss, and the fairness threshold is set to τ = 0.1
+loss is the Cross-Entropy loss.
