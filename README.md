@@ -252,7 +252,7 @@ The FairLAB models provide a controlled family of predictors with different leve
 The intersectional settings are more challenging. Although Int-DP and Int-EOD still reduce unfairness, the strictest thresholds are not always fully achieved, especially on the multiclass datasets. This indicates that the combination of multiple sensitive attributes and multiple prediction classes increases the difficulty of satisfying fairness constraints without exceeding the allowed performance degradation.
 
 <p align="center">
-  <img src="img/Explanation/fairlab.jpg" width="300">
+  <img src="img/Explanation/fairlab.jpg" width="600">
 </p>
 
 ## Explanation Quality Analysis
@@ -261,11 +261,11 @@ The explanation-quality results show that the quality of feature attribution exp
 Across fairness thresholds, Sufficiency is the metric that reacts most clearly to fairness mitigation. Stricter fairness requirements, corresponding to lower values of \(\tau\), are generally associated with higher Sufficiency. Consistency follows a similar but weaker trend, while Stability remains mostly stable or fluctuates without a clear monotonic behavior. Across explainers, FastSHAP, Integrated Gradients, and KernelSHAP tend to show comparable behavior, whereas LIME is more variable: it can achieve high Sufficiency in some configurations, but it is less stable across metrics and settings.
 
 <p align="center">
-  <img src="img/Explanation/quality_dp.png" width="400">
+  <img src="img/Explanation/quality_dp.png" width="600">
 </p>
 
 <p align="center">
-  <img src="img/Explanation/quality_eod.png" width="400">
+  <img src="img/Explanation/quality_eod.png" width="600">
 </p>
 
 ## Explanation Fairness Analysis
@@ -276,17 +276,17 @@ The pattern becomes less regular in multiclass and intersectional settings. In t
 The correlation analysis confirms this picture. The Sufficiency gap shows a positive relationship with both DP and EOD, especially in binary settings; in Group-DP binary experiments, all explainers exhibit strong positive correlations. By contrast, Consistency and Stability gaps do not show a stable relationship with prediction fairness, and their correlations vary substantially across explainers and settings. Thus, Sufficiency is the most informative metric among those considered for connecting prediction fairness and explanation fairness.
 
 <p align="center">
-  <img src="img/Explanation/gap_income.jpg" width="300">
+  <img src="img/Explanation/gap_income.jpg" width="600">
 </p>
 <p align="center">
-  <img src="img/Explanation/gap_income3.jpg" width="300">
+  <img src="img/Explanation/gap_income3.jpg" width="600">
 </p>
 
 <p align="center">
-  <img src="img/Explanation/corr_dp.jpg" width="300">
+  <img src="img/Explanation/corr_dp.jpg" width="600">
 </p>
 <p align="center">
-  <img src="img/Explanation/corr_eod.jpg" width="300">
+  <img src="img/Explanation/corr_eod.jpg" width="600">
 </p>
 
 # Additional Information about the Experiments
@@ -344,22 +344,22 @@ The detailed plots should therefore be read as the predictive baseline for the e
 
 ### Group-DP
 <p align="center">
-  <img src="img/FairLAB/fairlab_group_dp.jpg" width="200">
+  <img src="img/FairLAB/fairlab_group_dp.jpg" width="600">
 </p>
 
 ### Group-EOD
 <p align="center">
-  <img src="img/FairLAB/fairlab_group_eod.jpg" width="200">
+  <img src="img/FairLAB/fairlab_group_eod.jpg" width="600">
 </p>
 
 ### Int-DP
 <p align="center">
-  <img src="img/FairLAB/fairlab_int_dp.jpg" width="200">
+  <img src="img/FairLAB/fairlab_int_dp.jpg" width="600">
 </p>
 
 ### Int-EOD
 <p align="center">
-  <img src="img/FairLAB/fairlab_int_eod.jpg" width="200">
+  <img src="img/FairLAB/fairlab_int_eod.jpg" width="600">
 </p>
 
 ## Explanation Quality Analysis
@@ -371,7 +371,7 @@ The Jaccard overlap results for Income and Income_3 under Group-DP show that the
 Importantly, agreement on the most relevant features is not sufficient to guarantee faithful explanations. Even when different configurations identify similar top-ranked features, their Sufficiency scores can differ substantially. In practice, two explanations may highlight similar features while differing in how well those features reconstruct the black-box prediction.
 
 <p align="center">
-  <img src="img/Explanation/jaccard.jpg" width="400">
+  <img src="img/Explanation/jaccard.jpg" width="600">
 </p>
 
 ## Overall Takeaways
